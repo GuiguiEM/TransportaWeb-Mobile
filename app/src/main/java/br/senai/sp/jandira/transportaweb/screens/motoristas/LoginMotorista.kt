@@ -101,11 +101,11 @@ fun LoginM(controleDeNavegacao: NavHostController) {
                     text = "Digite seu e-mail aqui:",
                     fontWeight = FontWeight.Medium,
                     modifier = Modifier
-                        .padding(top = 64.dp, end = 148.dp, bottom = 4.dp)
+                        .padding(top = 59.dp, end = 148.dp, bottom = 4.dp)
                 )
                 OutlinedTextField(
                     modifier = Modifier
-                        .height(50.dp),
+                        .height(60.dp),
                     shape = RoundedCornerShape(10.dp),
                     value = emailState.value,
                     onValueChange = { emailState.value = it},
@@ -127,17 +127,17 @@ fun LoginM(controleDeNavegacao: NavHostController) {
                 Text(
                     text = "Digite sua senha aqui:",
                     modifier = Modifier
-                        .padding(top = 64.dp, end = 148.dp, bottom = 4.dp)
+                        .padding(top =59.dp, end = 148.dp, bottom = 4.dp)
                 )
                 OutlinedTextField(
                     modifier = Modifier
-                        .height(50.dp),
+                        .height(60.dp),
                     shape = RoundedCornerShape(10.dp),
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color(0xFFF61221),
                         unfocusedBorderColor = Color(0xFF131313),
-                        focusedContainerColor = Color(0xFFF4F4F4),
-                        unfocusedContainerColor = Color(0xFFF4F4F4)
+                        focusedContainerColor = Color(0xFFFFFFFF),
+                        unfocusedContainerColor = Color(0xFFFFFFFF)
                     ),
                     value = passwordState.value,
                     onValueChange = {passwordState.value = it},
@@ -155,7 +155,7 @@ fun LoginM(controleDeNavegacao: NavHostController) {
                     horizontalArrangement = Arrangement.Start,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 44.dp, top = 5.dp, end = 44.dp)
+                        .padding(start = 44.dp, top = 4.dp, end = 44.dp)
                 ) {
                     Checkbox(
                         checked = false,
@@ -169,7 +169,7 @@ fun LoginM(controleDeNavegacao: NavHostController) {
                 }
                 Column (
                     modifier = Modifier
-                        .padding(top = 24.dp)
+                        .padding(top = 28.dp)
                 ){
                     Text(
                         text = "ESQUECI A SENHA",
@@ -180,7 +180,7 @@ fun LoginM(controleDeNavegacao: NavHostController) {
                     modifier = Modifier
                         .width(280.dp)
                         .height(110.dp)
-                        .padding(top = 60.dp),
+                        .padding(top = 64.dp),
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults
                         .buttonColors(containerColor = Color(0xFFF61221)),
@@ -199,7 +199,7 @@ fun LoginM(controleDeNavegacao: NavHostController) {
                                     val motoristaLogado = response.body()
                                     motoristaLogado?.let {
                                         if (it.status_code == 200) {
-                                            controleDeNavegacao.navigate("historicoViagens")
+                                            controleDeNavegacao.navigate("homeMotorista")
                                         } else {
                                             mensagemErroState.value = "Erro: ${it.message}"
                                         }
