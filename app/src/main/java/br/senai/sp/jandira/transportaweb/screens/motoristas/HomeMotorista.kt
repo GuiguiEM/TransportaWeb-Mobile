@@ -167,6 +167,171 @@ fun HomeM(controleDeNavegacao: NavHostController) {
                     }
                 }
             }
+            Card (
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 30.dp, start = 18.dp, end = 18.dp)
+                    .height(110.dp)
+                    .background(Color.White, shape = RoundedCornerShape(20.dp)),
+                colors = CardDefaults
+                    .cardColors(
+                        containerColor = Color.Transparent,
+                    ),
+            ){
+                Row (
+                    modifier = Modifier
+                        .fillMaxSize()
+                ){
+                    Column (
+                        modifier = Modifier
+                            .width(250.dp)
+                            .fillMaxHeight()
+                            .background(Color.Transparent)
+                    ){
+                        Row (
+                            horizontalArrangement = Arrangement.Start,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(top = 16.dp, start = 24.dp),
+                        ){
+                            Box(
+                                modifier = Modifier
+                                    .width(80.dp)
+                                    .height(25.dp)
+                                    .background(Color.Gray, shape = RoundedCornerShape(4.dp))
+                            ){
+                                Text(
+                                    "Na espera",
+                                    textAlign = TextAlign.Center,
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.SemiBold,
+                                    color = Color.White,
+                                    modifier = Modifier
+                                        .align(Alignment.Center)
+                                )
+                            }
+                            Text(
+                                "#412-639-JTO",
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier
+                                    .padding(start = 8.dp)
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .padding(top = 14.dp, start = 24.dp)
+                                .fillMaxWidth()
+                                .height(2.dp)
+                                .background(color = Color(0xFFDADADA))
+                        ){
+
+                        }
+                        Row (
+                            horizontalArrangement = Arrangement.SpaceAround,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(20.dp)
+                                .padding(top = 4.dp, start = 20.dp)
+                        ){
+                            Text(
+                                "De:  DHL Jandira",
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                            Text(
+                                text = "-"
+                            )
+                            Text(
+                                "Para: GM Guarulhos",
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
+                        Row (
+                            horizontalArrangement = Arrangement.SpaceAround,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(start = 20.dp)
+                        ){
+                            Text(
+                                "15/08/2025",
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                            Text(
+                                "15/08/2025",
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
+                    }
+                    Image(
+                        painterResource(R.drawable.box),
+                        contentDescription = "Caixa",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .fillMaxSize()
+
+                    )
+                }
+            }
+        }
+        Box(
+            modifier = Modifier
+                .padding(top = 760.dp)
+                .background(
+                    Color.White, shape =
+                    RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp)
+                )
+        ){
+            Column {
+                Row (
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(45.dp)
+                        .padding(start = 20.dp, top = 10.dp, end = 20.dp),
+                    horizontalArrangement = Arrangement.SpaceAround
+                ){
+                    Image(
+                        painterResource(R.drawable.caminhao),
+                        contentDescription = "Caminhao",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .width(40.dp)
+                            .padding(start = 0.dp)
+                    )
+                    Image(
+                        painterResource(R.drawable.perfil),
+                        contentDescription = "Caminhao",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .width(42.dp)
+                            .padding(start = 0.dp)
+                    )
+                }
+                Row (
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp)
+                        .padding(start = 20.dp, top = 0.dp, end = 20.dp),
+                    horizontalArrangement = Arrangement.SpaceAround
+                ){
+                    Text(
+                        text = "Viagens",
+                        fontWeight = FontWeight.SemiBold,
+                        color = Color(0xFFF61221),
+                        modifier = Modifier
+                            .padding(end = 6.dp)
+                    )
+                    Text(
+                        text = "Perfil",
+                        fontWeight = FontWeight.SemiBold,
+                        color = Color(0xFFF61221),
+                        modifier = Modifier
+                            .padding(end = 10.dp)
+                    )
+                }
+            }
         }
     }
 }
@@ -286,13 +451,13 @@ fun ViagemCard (viagem: Viagem) {
     }
 }
 
-//@Preview(showBackground = true)
-//@Composable
-//fun LoginPreview() {
-//    TransportaWebTheme {
-//        HomeM(controleDeNavegacao = NavHostController(LocalContext.current))
-//    }
-//}
+@Preview(showBackground = true)
+@Composable
+fun HomePreview() {
+    TransportaWebTheme {
+        HomeM(controleDeNavegacao = NavHostController(LocalContext.current))
+    }
+}
 
 @Preview
 @Composable
@@ -307,61 +472,6 @@ fun ViagemCardPreview() {
 //fun LoginPreview() {
 //    TransportaWebTheme {
 //        ViagemCard(Viagem())
-//    }
-//}
-
-//Box(
-//modifier = Modifier
-//.padding(top = 760.dp)
-//.background(
-//Color.White, shape =
-//RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp)
-//)
-//){
-//    Column {
-//        Row (
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .height(45.dp)
-//                .padding(start = 20.dp, top = 10.dp, end = 20.dp),
-//            horizontalArrangement = Arrangement.SpaceAround
-//        ){
-//            Image(
-//                painterResource(R.drawable.caminhao),
-//                contentDescription = "Caminhao",
-//                contentScale = ContentScale.Crop,
-//                modifier = Modifier
-//                    .width(40.dp)
-//                    .padding(start = 0.dp)
-//            )
-//            Image(
-//                painterResource(R.drawable.perfil),
-//                contentDescription = "Caminhao",
-//                contentScale = ContentScale.Crop,
-//                modifier = Modifier
-//                    .width(42.dp)
-//                    .padding(start = 0.dp)
-//            )
-//        }
-//        Row (
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .height(50.dp)
-//                .padding(start = 20.dp, top = 0.dp, end = 20.dp),
-//            horizontalArrangement = Arrangement.SpaceAround
-//        ){
-//            Text(
-//                text = "333",
-//                fontWeight = FontWeight.SemiBold,
-//                color = Color(0xFFF61221)
-//
-//            )
-//            Text(
-//                text = "333",
-//                fontWeight = FontWeight.SemiBold,
-//                color = Color(0xFFF61221)
-//            )
-//        }
 //    }
 //}
 
