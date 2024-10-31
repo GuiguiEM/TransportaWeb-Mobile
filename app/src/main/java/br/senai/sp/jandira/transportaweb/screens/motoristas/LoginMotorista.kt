@@ -127,7 +127,7 @@ fun LoginM(controleDeNavegacao: NavHostController) {
                 Text(
                     text = "Digite sua senha aqui:",
                     modifier = Modifier
-                        .padding(top =59.dp, end = 148.dp, bottom = 4.dp)
+                        .padding(top = 59.dp, end = 130.dp)
                 )
                 OutlinedTextField(
                     modifier = Modifier
