@@ -14,11 +14,13 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -45,7 +47,7 @@ fun PerfilH(controleDeNavegacao: NavHostController) {
         Column (
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .padding(top = 20.dp)
+                .padding(top = 10.dp)
         ){
             Box(
                 modifier = Modifier
@@ -63,7 +65,7 @@ fun PerfilH(controleDeNavegacao: NavHostController) {
             }
             Row (
                 modifier = Modifier
-                    .padding(top = 24.dp)
+                    .padding(top = 20.dp)
             ){
                 Text(
                     "Olá Junior!",
@@ -75,7 +77,7 @@ fun PerfilH(controleDeNavegacao: NavHostController) {
             }
             Card(
                 modifier = Modifier
-                    .padding(top = 34.dp)
+                    .padding(top = 10.dp)
                     .size(90.dp),
                 shape = CircleShape,
                 border = BorderStroke(2.dp, Color.White)
@@ -86,7 +88,36 @@ fun PerfilH(controleDeNavegacao: NavHostController) {
                 text = "Nome:",
                 fontWeight = FontWeight.Medium,
                 modifier = Modifier
-                    .padding(top = 35.dp, end = 250.dp)
+                    .padding(top = 30.dp, end = 250.dp)
+            )
+            OutlinedTextField(
+                modifier = Modifier
+                    .padding(start = 45.dp, end = 45.dp,)
+                    .fillMaxWidth()
+                    .height(60.dp),
+                shape = RoundedCornerShape(10.dp),
+                value = "",
+                onValueChange = { },
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = Color(0xFFF61221),
+                    unfocusedBorderColor = Color(0xFF131313),
+                    focusedContainerColor = Color(0xFFF4F4F4),
+                    unfocusedContainerColor = Color(0xFFF4F4F4)
+                ),
+                label = {
+
+                    Text(
+                        text = "E-mail",
+                        modifier = Modifier
+                            .padding(start = 0.dp)
+                    )
+                }
+            )
+            Text(
+                text = "Digite seu e-mail aqui:",
+                fontWeight = FontWeight.Medium,
+                modifier = Modifier
+                    .padding(top = 17.dp, end = 130.dp)
             )
             OutlinedTextField(
                 modifier = Modifier
@@ -115,36 +146,7 @@ fun PerfilH(controleDeNavegacao: NavHostController) {
                 text = "Digite seu e-mail aqui:",
                 fontWeight = FontWeight.Medium,
                 modifier = Modifier
-                    .padding(top = 15.dp, end = 130.dp)
-            )
-            OutlinedTextField(
-                modifier = Modifier
-                    .padding(start = 45.dp, end = 45.dp)
-                    .fillMaxWidth()
-                    .height(60.dp),
-                shape = RoundedCornerShape(10.dp),
-                value = "",
-                onValueChange = { },
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = Color(0xFFF61221),
-                    unfocusedBorderColor = Color(0xFF131313),
-                    focusedContainerColor = Color(0xFFF4F4F4),
-                    unfocusedContainerColor = Color(0xFFF4F4F4)
-                ),
-                label = {
-
-                    Text(
-                        text = "E-mail",
-                        modifier = Modifier
-                            .padding(start = 0.dp)
-                    )
-                }
-            )
-            Text(
-                text = "Digite seu e-mail aqui:",
-                fontWeight = FontWeight.Medium,
-                modifier = Modifier
-                    .padding(top = 15.dp, end = 130.dp)
+                    .padding(top = 17.dp, end = 130.dp)
             )
             OutlinedTextField(
                 modifier = Modifier
@@ -171,10 +173,21 @@ fun PerfilH(controleDeNavegacao: NavHostController) {
             )
             Button(
                 modifier = Modifier
-                    .width(200.dp)
-                    .height(50.dp),
-                onClick = (),
-            )
+                    .padding(top = 90.dp, start = 45.dp, end = 45.dp)
+                    .fillMaxWidth()
+                    .height(45.dp),
+                shape = RoundedCornerShape(10   .dp),
+                colors = ButtonDefaults
+                    .buttonColors(Color(0xFFF61221)),
+                onClick = {}
+            ) {
+                Text(
+                    text = "FINALIZAR",
+                    fontFamily = FontFamily.Default,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 18.sp,
+                )
+            }
         }
     }
 }
